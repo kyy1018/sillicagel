@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>silica gel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        *{margin: 0; padding: 0;}
+        #wrap, main, section{
+            width: 100%; margin: 0 auto;
+            position: relative;
+        }
+        /* 전체 틀 잡기 */
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: #000;
+            background-image: url(img/header.png);
+            position: relative;
+        }
+        #logo{
+            position: absolute;
+            top: 0; left: 710px;
+        }
+        /* HEADER END */
+
+        main{
+            height: 1000px;
+        }
+        #object{
+            position: absolute; top: 0; left: 0;
+            display: none;
+        }
+        /* MAIN END */
+        #cover01{
+            width: 100%; height: 300px;
+        }
+        /* 여백(cover01) END */
+
+        #s1{position: relative;}
+        #img-wrap, .click{
+            width: 1920px; height: 1000px;
+            overflow: hidden;
+        }
+        #img-wrap>li{
+            width: 960px; height: 100%;
+            float: left;
+            position: relative;
+        }
+        .click{
+            width: 100%; height: 100%;
+            float: left;
+        }
+        .click>div:last-child{
+            position: absolute; top: 0; left: 0px;
+        }
+
+        /* s1 END */
+
+        #s2{
+            width: 1920px; height: 1000px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+        #s2>iframe{
+            position: absolute; top: 150px; left: 600px;
+        }
+
+        .swiper {
+        position: absolute; top: 650px; left: 0px;
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 250px;
+        height: 250px;
+        }
+
+        .swiper-slide img {
+        display: block;
+        width: 100%;
+        }
+        /* SWIPER END */
+        /* s2 END */
+        footer{
+            width: 100%; height: 500px;
+            background-color: #000;
+            float: left;
+        }
+        /* FOOTER END */
+    </style>
+    <script src="script/jquery-3.7.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>      
+        $(function(){
+            var i = 2;
+            $('.click').click(function(){
+                i--;
+            if(i==0){
+                $('.click>div').fadeIn();
+                i=2;
+            }else{
+                $('.click>div').eq(i).fadeOut();
+            }
+            });
+            setInterval(function(){
+                $('.click').trigger('click');
+            }, 3000);
+
+            $('main').hover(function(){
+                $('#object').fadeIn(300);
+            });
+            
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+                });
+        });/////
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="logo"><a href="#"><img src="img/sil.png" alt=""></a></div>
+        </header>
+        <!-- HEADER END -->
+
+        <main>
+            <img src="img/main-none.png" alt="">
+            <div id="object">
+                <img src="img/main-object.png" alt="">
+                <img src="img/main-ticket.png" alt="">
+            </div>
+        </main>
+        <!-- MAIN END -->
+
+        <div id="cover01" class="content">
+            <img src="img/s2.png" alt="">
+        </div>
+        <!-- 여백(cover01) -->
+
+        <section id="s1">
+            <ul id="img-wrap">
+                <li><img src="img/s1.png" alt="">
+                </li>
+                <li class="click">
+                    <div><img src="img/s1-3.png" alt=""></div>
+                    <div><img src="img/s1-2.png" alt=""></div>
+                </li>
+            </ul>
+        </section>
+        <!-- s1 END -->
+
+        <section id="s2" class="content"><img src="img/vid.png" alt="">
+            <iframe width="720" height="410" src="https://www.youtube.com/embed/9s_G8Dv25uI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="img/01.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/02.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/03.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/04.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/05.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/06.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/07.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/08.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/09.jpg" />                                         
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/10.jpg" />                                         
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/11.jpg" />                                         
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/12.jpg" />                                         
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="img/13.jpg" />                                         
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+        </section>
+        <!-- s2 END -->
+        <!-- SECTION END -->
+        <footer>
+            <img src="img/footer.png" alt="">
+        </footer>
+        <!-- FOOTER END -->
+    </div>
+</body>
+</html>
